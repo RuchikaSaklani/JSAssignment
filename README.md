@@ -7,7 +7,11 @@ A node.js program that converts the csv files by merging the three files (ST, SC
 A web page with d3.js which .. 
 
 Loads the json produced in Part 1.
+
 Plots the following plots … (Note:)
+
 Age-wise population distribution in terms of literate population
+
 Graduate Population of India - State-wise & Gender-wise.
+
 Education Category wise - all India data combined together
