@@ -1,40 +1,7 @@
-<!doctype html>
-<meta charset="utf-8">
-<head>
-   <style>
-.bar{
-  fill: blue;
-}
-
-.bar:hover{
-  fill: brown;
-}
-   .axis {
-     font: 10px sans-serif;
-   }
-
-   .axis path,
-   .axis line {
-     fill: none;
-     stroke: #000;
-     shape-rendering: crispEdges;
-   }
-   h2{
-     margin-left: 500px;
-   }
-
-   </style>
-</head>
-
-<body>
-<h2>Literate_population age-wise</h2>
-<script src="http://d3js.org/d3.v3.min.js"></script>
-
-<script>
 // set the dimensions of the canvas
-var margin = {top: 40, right: 60, bottom: 80, left: 200},
-  width = 1200 - margin.left - margin.right,
-  height = 500 - margin.top - margin.bottom;
+var margin = {top: 40, right: 80, bottom: 80, left: 300},
+  width = 1300 - margin.left - margin.right,
+  height = 600 - margin.top - margin.bottom;
 
 
 // set the ranges
@@ -64,7 +31,7 @@ var svg = d3.select("body").append("svg")
 
 
 // load the data
-d3.json("./../json/first_json.json", function(error, data) {
+d3.json("./../json/ageWiseLiterate.json", function(error, data) {
 
   data.forEach(function(d) {
 
@@ -97,8 +64,8 @@ svg.append("g")
     .call(yAxis)
     .append("text")
     .attr("transform", "rotate(-90)")
-    .attr("y", -90)
-    .attr("x", -90)
+    .attr("y", -120)
+    .attr("x", -160)
     .attr("dy", ".71em")
     .style("text-anchor", "end")
     .text("Literate_population");
@@ -115,6 +82,3 @@ svg.selectAll("bar")
     .attr("height", function(d) { return height - y(d["Literate_population"]); });
 
 });
-
-</script>
-</body>
